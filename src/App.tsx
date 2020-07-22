@@ -4,7 +4,7 @@ import Wrapper from './components/PokeWrapper/PokeWrapper';
 
 function App() {
 	return (
-		<div className='App'>
+		<div>
 			<Wrapper />
 		</div>
 	);

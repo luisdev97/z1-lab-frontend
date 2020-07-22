@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Header from '../Header/Header';
 
 const StyledWrapper = styled.div`
 	background-color: purple;
@@ -10,7 +11,11 @@ const StyledWrapper = styled.div`
 `;
 
 const Wrapper = () => {
-	return <StyledWrapper>contenido de la lista</StyledWrapper>;
+	return (
+		<StyledWrapper>
+			<Header />
+		</StyledWrapper>
+	);
 };
 
 export default Wrapper;
