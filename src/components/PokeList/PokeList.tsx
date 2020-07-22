@@ -2,14 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledPokeList = styled.div`
-	background-color: purple;
-	height: 85vh;
-	width: 30vw;
-	margin: 0 auto;
+	height: 50vh;
+	background-color: teal;
+	flex: 2.6;
 `;
 
 const PokeList = () => {
-	return <StyledPokeList>contenido de la lista</StyledPokeList>;
+	return <StyledPokeList>Lista de pokemon</StyledPokeList>;
 };
 
 export default PokeList;
