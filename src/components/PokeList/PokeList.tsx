@@ -1,4 +1,5 @@
 import React from 'react';
+import { useQuery } from 'react-query';
 import styled from 'styled-components';
 import PokeCard from '../PokeCard/PokeCard';
 
@@ -13,20 +14,28 @@ const StyledPokeList = styled.div`
 	grid-gap: 5px;
 	padding: 5%;
 `;
+const getPokeDataSet = async () => {
+	const response: Response = await fetch('https://pokeapi.co/api/v2/pokemon');
+	return response.json();
+};
 
 const PokeList = () => {
+	const { status, data, isFetching, error } = useQuery('posts', getPokeDataSet);
+
+	const renderPokeCards = (pokemon: any) =>
+		pokemon.map((p: any) => <PokeCard key={p.name} />);
+
+	if (status === 'loading') {
+		return <div>loading...</div>; // loading state
+	}
+
+	if (status === 'error') {
+		return <div>{error?.message}</div>; // error state
+	}
+
 	return (
 		<StyledPokeList>
-			<PokeCard />
-			<PokeCard />
-			<PokeCard />
-			<PokeCard />
-			<PokeCard />
-			<PokeCard />
-			<PokeCard />
-			<PokeCard />
-			<PokeCard />
-			<PokeCard />
+			{renderPokeCards(data.results.slice(0, 10))}
 		</StyledPokeList>
 	);
 };
