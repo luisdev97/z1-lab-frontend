@@ -23,7 +23,7 @@ const PokeList = () => {
 	const { status, data, isFetching, error } = useQuery('posts', getPokeDataSet);
 
 	const renderPokeCards = (pokemon: any) =>
-		pokemon.map((p: any) => <PokeCard key={p.name} />);
+		pokemon.map((p: any) => <PokeCard key={p.name} pokemon={p} />);
 
 	if (status === 'loading') {
 		return <div>loading...</div>; // loading state

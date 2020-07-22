@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { PokeCardProps } from './props';
 
 const SyledPokeCard = styled.div`
 	height: 17%;
@@ -7,6 +8,6 @@ const SyledPokeCard = styled.div`
 	background-color: gray;
 `;
 
-export default function PokeCard() {
-	return <SyledPokeCard></SyledPokeCard>;
+export default function PokeCard({ pokemon }: PokeCardProps) {
+	return <SyledPokeCard>{pokemon.name}</SyledPokeCard>;
 }
