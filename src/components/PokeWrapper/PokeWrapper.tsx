@@ -5,10 +5,9 @@ import PokeList from '../PokeList/PokeList';
 
 const StyledWrapper = styled.div`
 	background-color: purple;
-	height: 85vh;
+	height: 100vh;
 	width: 30vw;
 	margin: 0 auto;
-	margin-top: 5vh;
 	display: flex;
 	flex-direction: column;
 `;

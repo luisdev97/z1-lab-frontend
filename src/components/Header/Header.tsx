@@ -5,6 +5,7 @@ const StyledHeader = styled.header`
 	background-color: yellow;
 	padding: 5% 0 0 5%;
 	flex: 0.3;
+	flex-flow: column wrap;
 `;
 
 export default function Header() {
