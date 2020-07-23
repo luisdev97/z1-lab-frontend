@@ -9,6 +9,18 @@ const SyledPokeCard = styled.div`
 `;
 
 export default function PokeCard({ pokemon }: PokeCardProps) {
-  console.log(pokemon);
-  return <SyledPokeCard>{pokemon?.name}</SyledPokeCard>;
+  const { name, id } = pokemon;
+
+  const getFormtedId = (id: string): string => {
+    let idPrefix: string = "#";
+    if (id.length === 1) idPrefix = idPrefix.concat("00");
+    else if (id.length === 2) idPrefix = idPrefix.concat("0");
+    return idPrefix.concat(id);
+  };
+
+  return (
+    <SyledPokeCard>
+      {name} {getFormtedId(id.toString())}
+    </SyledPokeCard>
+  );
 }
