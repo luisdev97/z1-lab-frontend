@@ -3,14 +3,14 @@ import { useQuery } from "react-query";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { PokeCardContainerProps } from "./props";
 
-export default function PokeCardContainer({ pokemon }: PokeCardContainerProps) {
+export default function PokeCardContainer({ id }: PokeCardContainerProps) {
   const getOnePokemon = async (url: string) => {
     const response: Response = await fetch(url);
     return response.json();
   };
 
   const { status, data, error } = useQuery(
-    pokemon.url ? pokemon.url : "",
+    `https://pokeapi.co/api/v2/pokemon/${id}`,
     getOnePokemon
   );
 

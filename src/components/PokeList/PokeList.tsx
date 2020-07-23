@@ -1,5 +1,4 @@
-import React from "react";
-import { useQuery } from "react-query";
+import React, { useState } from "react";
 import styled from "styled-components";
 import PokeCardContainer from "../../containers/PokeCardContainer/PokeCardContainer";
 
@@ -10,32 +9,31 @@ const StyledPokeList = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  grid-gap: 5px;
+  /*grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  grid-gap: 5px;*/
   padding: 5%;
 `;
-const getPokeDataSet = async () => {
-  const response: Response = await fetch("https://pokeapi.co/api/v2/pokemon");
-  return response.json();
-};
 
 const PokeList = () => {
-  const { status, data, error } = useQuery("posts", getPokeDataSet);
+  const [page, setPage] = useState<number>(0);
 
-  const renderPokeCards = (pokemon: any) =>
-    pokemon.map((p: any) => <PokeCardContainer key={p.name} pokemon={p} />);
+  const prevPage = () => setPage(page - 1);
+  const nextPage = () => setPage(page + 1);
 
-  if (status === "loading") {
-    return <div>loading...</div>; // loading state
-  }
-
-  if (status === "error") {
-    return <div>{error?.message}</div>; // error state
-  }
+  const renderPokeCards = () => {
+    const range: number[] = Array.from({ length: 10 }, (v, k) => k + 1).map(
+      (k) => k + 10 * page
+    );
+    return range.map((id) => <PokeCardContainer key={id} id={id} />);
+  };
 
   return (
     <StyledPokeList>
-      {renderPokeCards(data.results.slice(0, 10))}
+      {renderPokeCards()}
+      <button disabled={page === 0} onClick={() => prevPage()}>
+        Anterior
+      </button>
+      <button onClick={() => nextPage()}>Siguiente</button>
     </StyledPokeList>
   );
 };

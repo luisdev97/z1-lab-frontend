@@ -4,5 +4,5 @@ type PokeFetchData = {
 };
 
 export type PokeCardContainerProps = {
-  pokemon: PokeFetchData;
+  id: number;
 };
