@@ -1,3 +1,3 @@
 export type PokeCardProps = {
-	pokemon: any;
+  pokemon: any;
 };
