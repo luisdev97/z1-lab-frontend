@@ -12,6 +12,29 @@ const StyledPokeList = styled.div`
   padding: 5%;
 `;
 
+const PaginationButton = styled.button`
+  margin-top: 1vh;
+  padding: 0 16px;
+  border-radius: 2px;
+  background-color: #018786;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  color: #fff;
+  transition: background-color 15ms linear,
+    box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  height: 36px;
+  line-height: 2.25rem;
+  font-family: Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  :disabled {
+    background-color: gray;
+  }
+`;
+
 const PokeList = () => {
   const [page, setPage] = useState<number>(0);
 
@@ -28,10 +51,10 @@ const PokeList = () => {
   return (
     <StyledPokeList>
       {renderPokeCards()}
-      <button disabled={page === 0} onClick={() => prevPage()}>
-        Anterior
-      </button>
-      <button onClick={() => nextPage()}>Siguiente</button>
+      <PaginationButton disabled={page === 0} onClick={() => prevPage()}>
+        Prev
+      </PaginationButton>
+      <PaginationButton onClick={() => nextPage()}>Next</PaginationButton>
     </StyledPokeList>
   );
 };
