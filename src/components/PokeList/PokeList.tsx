@@ -54,7 +54,9 @@ const PokeList = () => {
       <PaginationButton disabled={page === 0} onClick={() => prevPage()}>
         Prev
       </PaginationButton>
-      <PaginationButton onClick={() => nextPage()}>Next</PaginationButton>
+      <PaginationButton disabled={page === 95} onClick={() => nextPage()}>
+        Next
+      </PaginationButton>
     </StyledPokeList>
   );
 };
