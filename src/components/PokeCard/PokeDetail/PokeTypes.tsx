@@ -8,6 +8,7 @@ const StyledPokeTypes = styled.div`
   flex-flow: column;
   justify-content: space-around;
   align-content: space-between;
+  margin-bottom: 1vh;
   span {
     padding: 0.3vh;
     padding-bottom: 0.5vh;

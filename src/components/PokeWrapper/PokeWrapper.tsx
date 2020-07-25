@@ -4,7 +4,9 @@ import Header from "../Header/Header";
 import PokeList from "../PokeList/PokeList";
 
 const StyledWrapper = styled.div`
-  background-color: purple;
+  max-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  border: 0.1px solid gray;
   height: 100vh;
   width: 30vw;
   margin: 0 auto;

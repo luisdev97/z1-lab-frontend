@@ -11,7 +11,6 @@ const StyledPokeDetail = styled.div`
   div {
     width: 50%;
     height: 8vh;
-    background-color: orange;
     margin: 1%;
   }
 `;

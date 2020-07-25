@@ -3,15 +3,14 @@ import styled from "styled-components";
 import PokeCardContainer from "../../containers/PokeCardContainer/PokeCardContainer";
 
 const StyledPokeList = styled.div`
-  background-color: teal;
+  max-height: 100vh;
   flex: 2.6;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  /*grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  grid-gap: 5px;*/
-  padding: 5%;
+  padding-top: 2%;
+  align-content: flex-start;
 `;
 
 const PokeList = () => {
