@@ -4,22 +4,21 @@ import { PokeCardProps } from "./props";
 import PokeDetail from "./PokeDetail/PokeDetail";
 
 const StyledPokeCard = styled.div`
-  height: 15%;
+  height: 17%;
   width: 45%;
   background-color: #f2f2f2;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 1%;
-  margin-top: 5px !important;
   p {
     font-size: 1.3em;
   }
   p.pokeId {
     color: #828282;
     text-align: right;
-    margin: 5% 5% 0;
+    margin: 4% 5% 0;
   }
   p.pokeName {
-    margin: 0 0 0 1vw;
+    margin: 0 0 0 5%;
     color: #4f4f4f;
   }
 `;

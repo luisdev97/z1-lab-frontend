@@ -3,12 +3,8 @@ import styled from "styled-components";
 import { PokeImageProps } from "../props";
 
 const StyledPokeImage = styled.div`
-  max-height: 80%;
-  margin: 0 auto;
-  padding-left: 1vw;
-  padding-bottom: 3.5vh;
   img {
-    height: 8.5vh;
+    height: 8vh;
   }
 `;
 

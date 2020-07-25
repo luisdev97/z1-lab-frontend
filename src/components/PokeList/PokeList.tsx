@@ -9,8 +9,7 @@ const StyledPokeList = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-top: 2%;
-  align-content: flex-start;
+  padding: 5%;
 `;
 
 const PokeList = () => {
