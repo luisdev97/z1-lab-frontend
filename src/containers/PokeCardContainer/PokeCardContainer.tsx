@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "react-query";
 import PokeCard from "../../components/PokeCard/PokeCard";
 import { PokeCardContainerProps } from "./props";
+import PokeCardLoader from "../../components/PokeCard/PokeCardLoader/PokeCardLoader";
 
 export default function PokeCardContainer({ id }: PokeCardContainerProps) {
   const getOnePokemon = async (url: string) => {
@@ -15,7 +16,7 @@ export default function PokeCardContainer({ id }: PokeCardContainerProps) {
   );
 
   if (status === "loading") {
-    return <div>loading...</div>; // loading state
+    return <PokeCardLoader />; // loading state
   }
 
   if (status === "error") {

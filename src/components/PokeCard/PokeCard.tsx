@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { PokeCardProps } from "./props";
 import PokeDetail from "./PokeDetail/PokeDetail";
 
-const StyledPokeCard = styled.div`
-  height: 17%;
-  width: 45%;
+export const StyledPokeCard = styled.div`
+  height: 14vh;
+  width: 12vw;
   background-color: #f2f2f2;
   border-radius: 10px;
   padding: 1%;
