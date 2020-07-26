@@ -9,13 +9,13 @@ const StyledPokeImage = styled.div`
 `;
 
 export default function PokeImage({ sprites }: PokeImageProps) {
-  const [imageShown, setImageShown] = useState(0);
-  const [images, setImages] = useState([
+  const [imageShown, setImageShown] = useState<number>(0);
+  const [images, setImages] = useState<[string, string]>([
     sprites.front_default,
     sprites.back_default,
   ]);
 
-  const handleChangeImageShown = () => {
+  const handleChangeImageShown = (): void => {
     imageShown === 0 ? setImageShown(1) : setImageShown(0);
   };
 

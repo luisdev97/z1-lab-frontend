@@ -42,6 +42,7 @@ const PokeList = () => {
   const nextPage = () => setPage(page + 1);
 
   const renderPokeCards = () => {
+    //get the range of ids based on the selected page
     const range: number[] = Array.from({ length: 10 }, (v, k) => k + 1).map(
       (k) => k + 10 * page
     );

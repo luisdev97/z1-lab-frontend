@@ -25,7 +25,7 @@ export const StyledPokeCard = styled.div`
 
 export default function PokeCard({ pokemon }: PokeCardProps) {
   const { name, id, types, sprites } = pokemon;
-  console.log(pokemon);
+
   const getFormtedId = (id: string): string => {
     let idPrefix: string = "#";
     if (id.length === 1) idPrefix = idPrefix.concat("00");
