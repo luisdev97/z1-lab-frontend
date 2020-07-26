@@ -32,8 +32,8 @@ const PokeBall = styled.div`
   :after {
     content: "";
     position: absolute;
-    width: 60px;
-    height: 30px;
+    width: 100%;
+    height: 50%;
     background-color: red;
     border-bottom: 4px solid;
     top: -4px;
